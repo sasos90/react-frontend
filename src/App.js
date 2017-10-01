@@ -9,34 +9,37 @@ type Props = {
 };
 
 type State = {
-    loggedIn: boolean
+  loggedIn: boolean
 };
 
 class App extends React.Component<Props, State> {
 
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            loggedIn: false
-        };
-    }
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      loggedIn: false
+    };
+  }
 
-    render() {
-        this.setState({
-            loggedIn: this.isLoggedIn()
-        });
-        return (
-            <div className="App">
-                <Header />
-                <Body />
-                <Footer />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Body />
+        <Footer />
+      </div>
+    );
+  }
 
-    isLoggedIn(): boolean {
-        return true;
-    }
+  componentDidMount() {
+    this.setState({
+      loggedIn: this.isLoggedIn()
+    });
+  }
+
+  isLoggedIn(): boolean {
+    return true;
+  }
 }
 
 export default App;
