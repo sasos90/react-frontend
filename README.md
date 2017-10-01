@@ -1,3 +1,14 @@
+Frontend for Street basket manager, built in React.
+
+How to contribute:
+1. `npm install`
+2. `npm start` -> which will start the server and the file watchers in order to compile all the source files
+
+How to make production build:
+1. `npm build`
+2. (optional) `npm deploy` -> it will deploy to Firebase
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
