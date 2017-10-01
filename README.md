@@ -8,6 +8,9 @@ How to make production build:
 1. `npm build`
 2. (optional) `npm deploy` -> it will deploy to Firebase
 
+Running with mock data:
+1. `REACT_APP_MOCK=true npm start`
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
