@@ -2598,6 +2598,11 @@
       "from": "he@>=1.1.0 <1.2.0",
       "resolved": "https://registry.npmjs.org/he/-/he-1.1.1.tgz"
     },
+    "history": {
+      "version": "4.7.2",
+      "from": "history@>=4.7.2 <5.0.0",
+      "resolved": "https://registry.npmjs.org/history/-/history-4.7.2.tgz"
+    },
     "hmac-drbg": {
       "version": "1.0.1",
       "from": "hmac-drbg@>=1.0.0 <2.0.0",
@@ -2607,6 +2612,11 @@
       "version": "2.16.3",
       "from": "hoek@>=2.0.0 <3.0.0",
       "resolved": "https://registry.npmjs.org/hoek/-/hoek-2.16.3.tgz"
+    },
+    "hoist-non-react-statics": {
+      "version": "2.3.1",
+      "from": "hoist-non-react-statics@>=2.3.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-2.3.1.tgz"
     },
     "home-or-tmp": {
       "version": "2.0.0",
@@ -4961,6 +4971,16 @@
         }
       }
     },
+    "react-router": {
+      "version": "4.2.0",
+      "from": "react-router@>=4.2.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/react-router/-/react-router-4.2.0.tgz"
+    },
+    "react-router-dom": {
+      "version": "4.2.2",
+      "from": "react-router-dom@latest",
+      "resolved": "https://registry.npmjs.org/react-router-dom/-/react-router-dom-4.2.2.tgz"
+    },
     "react-scripts": {
       "version": "1.0.11",
       "from": "react-scripts@latest",
@@ -5184,6 +5204,11 @@
       "version": "1.0.1",
       "from": "resolve-from@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/resolve-from/-/resolve-from-1.0.1.tgz"
+    },
+    "resolve-pathname": {
+      "version": "2.2.0",
+      "from": "resolve-pathname@>=2.2.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/resolve-pathname/-/resolve-pathname-2.2.0.tgz"
     },
     "restore-cursor": {
       "version": "2.0.0",
@@ -5904,6 +5929,11 @@
       "from": "validate-npm-package-license@>=3.0.1 <4.0.0",
       "resolved": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz"
     },
+    "value-equal": {
+      "version": "0.4.0",
+      "from": "value-equal@>=0.4.0 <0.5.0",
+      "resolved": "https://registry.npmjs.org/value-equal/-/value-equal-0.4.0.tgz"
+    },
     "vary": {
       "version": "1.1.1",
       "from": "vary@>=1.1.1 <1.2.0",
@@ -5935,6 +5965,11 @@
       "version": "1.0.7",
       "from": "walker@>=1.0.5 <1.1.0",
       "resolved": "https://registry.npmjs.org/walker/-/walker-1.0.7.tgz"
+    },
+    "warning": {
+      "version": "3.0.0",
+      "from": "warning@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/warning/-/warning-3.0.0.tgz"
     },
     "watch": {
       "version": "0.10.0",
