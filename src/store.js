@@ -1,4 +1,10 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
+// auto logger
+import { createLogger } from 'redux-logger';
+// just for using async dispatches
+import thunk from 'redux-thunk';
+// for normal dispatch with promise in payload for example
+import promise from 'redux-promise-middleware';
 
 const userReducer = (state = {}, action) => {
   switch (action.type) {
@@ -9,6 +15,9 @@ const userReducer = (state = {}, action) => {
     case 'CHANGE_EMAIL': {
       state = {...state, email: action.payload};
       break;
+    }
+    default: {
+      // no default case
     }
   }
   return state;
@@ -23,18 +32,19 @@ const reducers = combineReducers({
   players: playersReducer
 });
 
-const logger = (store) => (next) => (action) => {
+/* Custom middlewares */
+/*const logger = (store) => (next) => (action) => {
   console.log('action fired!!!', action);
   next();
-};
-const error = (store) => (next) => (action) => {
+};*/
+/*const error = (store) => (next) => (action) => {
   try {
     next(action);
   } catch (e) {
     console.log('action fired!!!', action);
   }
-};
-const middleware = applyMiddleware(logger);
+};*/
+const middleware = applyMiddleware(promise(), thunk, createLogger());
 
 const store = createStore(reducers, {
   user: {
@@ -43,11 +53,26 @@ const store = createStore(reducers, {
   },
   players: []
 }, middleware);
-store.subscribe(() => {
-  console.log('Store changed', store.getState());
-});
 
-store.dispatch({type: 'CHANGE_USERNAME', payload: 'Saso'});
-store.dispatch({type: 'CHANGE_EMAIL', payload: 'changed@email.com'});
-store.dispatch({type: 'INC', payload: 5});
-store.dispatch({type: 'DEC', payload: 3});
+/* How to subscribe to store */
+/*store.subscribe(() => {
+  console.log('Store changed', store.getState());
+});*/
+
+/* Examples of dispatches */
+// store.dispatch({type: 'CHANGE_USERNAME', payload: 'Saso'});
+// store.dispatch({type: 'CHANGE_EMAIL', payload: 'changed@email.com'});
+// store.dispatch({type: 'INC', payload: 5});
+// store.dispatch({type: 'DEC', payload: 3});
+// async
+/*store.dispatch((dispatch) => {
+  // do some async and dispatch
+  dispatch({type: 'INC', payload: 2});
+});*/
+// async with promise middleware -> you have then PENDING, FULFILLED, REJECTED actions automatically. it's cleaner.
+// so: INC_PENDING, INC_FULFILLED, INC_REJECTED
+/*store.dispatch({
+  type: 'INC',
+  payload: ''//http.get(...)
+});*/
+export default store;

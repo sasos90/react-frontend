@@ -1,10 +1,11 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Header from "./header/Header";
 import Body from "./body/Body";
 import Footer from "./footer/Footer";
 import {BrowserRouter as Router} from "react-router-dom";
+// import { connect } from 'react-redux';
 
 type Props = {
 };
