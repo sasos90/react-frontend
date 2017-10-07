@@ -1,19 +1,11 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+import {applyMiddleware, createStore} from "redux";
 // auto logger
 import { createLogger } from 'redux-logger';
 // just for using async dispatches
 import thunk from 'redux-thunk';
 // for normal dispatch with promise in payload for example
 import promise from 'redux-promise-middleware';
-import userReducer from "./reducers/userReducer";
-import playersReducer from "./reducers/playersReducer";
-import matchesReducer from "./reducers/matchesReducer";
-
-const reducers = combineReducers({
-  user: userReducer,
-  players: playersReducer,
-  matches: matchesReducer
-});
+import reducers from "./reducers/index";
 
 /* Custom middlewares */
 /*const logger = (store) => (next) => (action) => {
