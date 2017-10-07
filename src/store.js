@@ -5,31 +5,14 @@ import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 // for normal dispatch with promise in payload for example
 import promise from 'redux-promise-middleware';
-
-const userReducer = (state = {}, action) => {
-  switch (action.type) {
-    case 'CHANGE_USERNAME': {
-      state = {...state, name: action.payload};
-      break;
-    }
-    case 'CHANGE_EMAIL': {
-      state = {...state, email: action.payload};
-      break;
-    }
-    default: {
-      // no default case
-    }
-  }
-  return state;
-};
-
-const playersReducer = (state = [], action) => {
-  return state;
-};
+import userReducer from "./reducers/userReducer";
+import playersReducer from "./reducers/playersReducer";
+import matchesReducer from "./reducers/matchesReducer";
 
 const reducers = combineReducers({
   user: userReducer,
-  players: playersReducer
+  players: playersReducer,
+  matches: matchesReducer
 });
 
 /* Custom middlewares */
@@ -46,13 +29,16 @@ const reducers = combineReducers({
 };*/
 const middleware = applyMiddleware(promise(), thunk, createLogger());
 
-const store = createStore(reducers, {
+const initialStore = {
   user: {
     username: 'someuser',
     email: 'somuser@email.com'
   },
-  players: []
-}, middleware);
+  players: [],
+  matches: []
+};
+
+const store = createStore(reducers, initialStore, middleware);
 
 /* How to subscribe to store */
 /*store.subscribe(() => {
@@ -69,10 +55,10 @@ const store = createStore(reducers, {
   // do some async and dispatch
   dispatch({type: 'INC', payload: 2});
 });*/
-// async with promise middleware -> you have then PENDING, FULFILLED, REJECTED actions automatically. it's cleaner.
+// async with 'promise' middleware -> you have then PENDING, FULFILLED, REJECTED actions automatically. it's cleaner.
 // so: INC_PENDING, INC_FULFILLED, INC_REJECTED
 /*store.dispatch({
   type: 'INC',
-  payload: ''//http.get(...)
+  payload: new Promise((resolve, reject) => { resolve(); })//http.get(...)
 });*/
 export default store;
