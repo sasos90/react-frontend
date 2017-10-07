@@ -7,7 +7,10 @@ class Menu extends Component {
     return (
       <div className="Menu">
         <div>Menu</div>
-        <Link to={`/tournaments`}>Go to tournaments</Link>
+        <ul>
+          <li><Link to={`/`}>Home</Link></li>
+          <li><Link to={`/tournaments`}>Tournaments</Link></li>
+        </ul>
       </div>
     );
   }

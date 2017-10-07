@@ -9,10 +9,10 @@ class Content extends Component {
     return (
       <div className="Content">
         <Route exact={true} path="/" render={() => (
-          <div>Root page</div>
+          <div>Home page</div>
         )} />
         <Route path="/tournaments" component={Overview} />
-        <Route path="/tournament/12" component={Detail} />
+        <Route path="/tournament/:tournamentId" component={Detail} />
       </div>
     );
   }
