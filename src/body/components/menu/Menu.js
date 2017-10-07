@@ -7,7 +7,7 @@ class Menu extends Component {
     return (
       <div className="Menu">
         <div>Menu</div>
-        <Link to={`/somePath`}>Go to somePath</Link>
+        <Link to={`/tournaments`}>Go to tournaments</Link>
       </div>
     );
   }
