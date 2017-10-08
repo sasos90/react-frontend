@@ -3,31 +3,56 @@ import './Menu.css';
 import { NavLink } from "react-router-dom";
 
 class Menu extends Component {
+
+  renderMenu() {
+    const menu = [
+      {
+        headline: {title: 'Overview', link: '/', exact: true}
+      }, {
+        headline: {title: 'Team', link: '/players'},
+        subItems: [
+          {title: 'Players', link: '/players'},
+          {title: 'Tactics', link: '/tactics'},
+          {title: 'Training', link: '/training'},
+          {title: 'Hire players', link: '/hireplayers'}
+        ]
+      }, {
+        headline: {title: 'Matches', link: '/tournaments'},
+        subItems: [
+          {title: 'Tournaments', link: '/tournaments'},
+          {title: 'Sign in', link: '/signtournament'}
+        ]
+      }, {
+        headline: {title: 'User', link: '/settings'},
+        subItems: [
+          {title: 'Settings', link: '/settings'},
+          {title: 'Find user', link: '/finduser'},
+          {title: 'Forum', link: '/forum'},
+          {title: 'Help & Support', link: '/support'}
+        ]
+      }, {
+        headline: {title: 'Logout', link: '/logout', exact: true}
+      }
+    ];
+
+    return <div>{menu.map(item => {
+      return <div>
+        <div className="menu-headline"><NavLink to={item.headline.link} exact={item.headline.exact ? true : false} activeClassName={`active`}>{item.headline.title}</NavLink></div>
+          {item.subItems &&
+            <ul>
+              {item.subItems.map(subItem => {
+                return <li><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>;
+              })}
+            </ul>}
+      </div>;
+    })}</div>;
+  }
+
   render() {
     return (
       <div className="Menu">
         <div>Menu</div>
-        <div className="menu-headline"><NavLink to={`/`} exact={true} activeClassName={`active`}>Overview</NavLink></div>
-        <div className="menu-headline"><NavLink to={`/players`} activeClassName={`active`}>Team</NavLink></div>
-        <ul>
-          <li><NavLink to={`/players`} activeClassName={`active`}>Players</NavLink></li>
-          <li><NavLink to={`/tactics`} activeClassName={`active`}>Tactics</NavLink></li>
-          <li><NavLink to={`/training`} activeClassName={`active`}>Training</NavLink></li>
-          <li><NavLink to={`/hireplayers`} activeClassName={`active`}>Hire players</NavLink></li>
-        </ul>
-        <div className="menu-headline"><NavLink to={`/tournaments`} activeClassName={`active`}>Matches</NavLink></div>
-        <ul>
-          <li><NavLink to={`/tournaments`} activeClassName={`active`}>Tournaments</NavLink></li>
-          <li><NavLink to={`/signtournament`} activeClassName={`active`}>Sign in</NavLink></li>
-        </ul>
-        <div className="menu-headline"><NavLink to={`/settings`} activeClassName={`active`}>User</NavLink></div>
-        <ul>
-          <li><NavLink to={`/settings`} activeClassName={`active`}>Settings</NavLink></li>
-          <li><NavLink to={`/finduser`} activeClassName={`active`}>Find user</NavLink></li>
-          <li><NavLink to={`/forum`} activeClassName={`active`}>Forum</NavLink></li>
-          <li><NavLink to={`/support`} activeClassName={`active`}>Help & Support</NavLink></li>
-        </ul>
-        <div className="menu-headline"><NavLink to={`/logout`} activeClassName={`active`}>Logout</NavLink></div>
+        {this.renderMenu()}
       </div>
     );
   }
