@@ -37,12 +37,12 @@ class Menu extends Component {
 
     return <div>{menu.map(item => {
       return <div>
-        <div className="menu-headline"><NavLink to={item.headline.link} exact={item.headline.exact ? true : false} activeClassName={`active`}>{item.headline.title}</NavLink></div>
+        <div className="menu-headline"><NavLink to={item.headline.link} exact={item.headline.exact} activeClassName={`active`}>{item.headline.title}</NavLink></div>
           {item.subItems &&
             <ul>
-              {item.subItems.map(subItem => {
-                return <li><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>;
-              })}
+              {item.subItems.map(subItem => (
+                <li><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>
+              ))}
             </ul>}
       </div>;
     })}</div>;
