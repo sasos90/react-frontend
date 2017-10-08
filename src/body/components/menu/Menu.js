@@ -35,13 +35,13 @@ class Menu extends Component {
       }
     ];
 
-    return <div>{menu.map(item => {
-      return <div>
+    return <div>{menu.map((item, a) => {
+      return <div key={a}>
         <div className="menu-headline"><NavLink to={item.headline.link} exact={item.headline.exact} activeClassName={`active`}>{item.headline.title}</NavLink></div>
           {item.subItems &&
             <ul>
-              {item.subItems.map(subItem => (
-                <li><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>
+              {item.subItems.map((subItem, b) => (
+                <li key={b}><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>
               ))}
             </ul>}
       </div>;
