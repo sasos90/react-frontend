@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Menu.css';
-import {Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Menu extends Component {
   render() {
@@ -8,8 +8,8 @@ class Menu extends Component {
       <div className="Menu">
         <div>Menu</div>
         <ul>
-          <li><Link to={`/`}>Home</Link></li>
-          <li><Link to={`/tournaments`}>Tournaments</Link></li>
+          <li><NavLink to={`/`} exact={true} activeClassName={`active`}>Home</NavLink></li>
+          <li><NavLink to={`/tournaments`} activeClassName={`active`}>Tournaments</NavLink></li>
         </ul>
       </div>
     );
