@@ -5,6 +5,14 @@ import TournamentOverview from "../../scenes/Tournaments/scenes/Overview/Tournam
 import TournamentDetail from "../../scenes/Tournaments/scenes/Detail/TournamentDetail";
 import TournamentSignIn from "../../scenes/Tournaments/scenes/SignIn/TournamentSignIn";
 import Overview from "../../scenes/Overview/Overview";
+import TeamPlayers from "../../scenes/Team/scenes/Players/TeamPlayers";
+import TeamTactics from "../../scenes/Team/scenes/Tactics/TeamTactics";
+import TeamTraining from "../../scenes/Team/scenes/Training/TeamTraining";
+import TeamHirePlayers from "../../scenes/Team/scenes/HirePlayers/TeamHirePlayers";
+import UserSettings from "../../scenes/User/scenes/Settings/UserSettings";
+import UserFindUser from "../../scenes/User/scenes/FindUser/UserFindUser";
+import UserForum from "../../scenes/User/scenes/Forum/UserForum";
+import UserSupport from "../../scenes/User/scenes/Support/UserSupport";
 
 class Content extends Component {
   render() {
@@ -15,10 +23,10 @@ class Content extends Component {
         )} />
 
         {/* Team */}
-        <Route path="/players" component={TournamentOverview} />
-        <Route path="/tactics" component={TournamentOverview} />
-        <Route path="/training" component={TournamentOverview} />
-        <Route path="/hireplayers" component={TournamentOverview} />
+        <Route path="/players" component={TeamPlayers} />
+        <Route path="/tactics" component={TeamTactics} />
+        <Route path="/training" component={TeamTraining} />
+        <Route path="/hireplayers" component={TeamHirePlayers} />
 
         {/* Matches */}
         <Route path="/tournaments" component={TournamentOverview} />
@@ -26,10 +34,10 @@ class Content extends Component {
         <Route path="/signtournament" component={TournamentSignIn} />
 
         {/* User */}
-        <Route path="/settings" component={TournamentOverview} />
-        <Route path="/finduser" component={TournamentDetail} />
-        <Route path="/forum" component={TournamentSignIn} />
-        <Route path="/support" component={TournamentSignIn} />
+        <Route path="/settings" component={UserSettings} />
+        <Route path="/finduser" component={UserFindUser} />
+        <Route path="/forum" component={UserForum} />
+        <Route path="/support" component={UserSupport} />
       </div>
     );
   }
