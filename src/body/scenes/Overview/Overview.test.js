@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Content from "./Content";
+import Overview from "./Overview";
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Content />, div);
+  ReactDOM.render(<Overview />, div);
 });
