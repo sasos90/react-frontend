@@ -1,5 +1,11 @@
 .Header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  border: 1px solid darkgoldenrod;
+
+  .account-wrapper {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+  }
 }
