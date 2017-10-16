@@ -1,6 +1,32 @@
 .Popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  .close-panel {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .content-wrapper {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    background: white;
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+  }
 }
