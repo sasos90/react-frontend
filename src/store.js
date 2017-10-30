@@ -23,8 +23,9 @@ const middleware = applyMiddleware(promise(), thunk, createLogger());
 
 const initialStore = {
   user: {
-    username: 'someuser',
-    email: 'somuser@email.com'
+    loggedIn: false,
+    username: null,
+    email: null
   },
   players: [],
   matches: []

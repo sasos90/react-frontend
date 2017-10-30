@@ -1,5 +1,3 @@
-const matchesReducer = (state = {}, action) => {
+export default (state = null, action) => {
   return state;
 };
-
-export default matchesReducer;

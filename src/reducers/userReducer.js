@@ -1,4 +1,4 @@
-const userReducer = (state = {}, action) => {
+export default (state = null, action) => {
   switch (action.type) {
     case 'CHANGE_USERNAME': {
       state = {...state, name: action.payload};
@@ -8,11 +8,25 @@ const userReducer = (state = {}, action) => {
       state = {...state, email: action.payload};
       break;
     }
+    case 'LOGGED_IN': {
+      state = {...state,
+        loggedIn: true,
+        username: action.payload.username,
+        email: action.payload.email
+      };
+      break;
+    }
+    case 'LOGGED_OUT': {
+      state = {...state,
+        loggedIn: false,
+        username: null,
+        email: null
+      };
+      break;
+    }
     default: {
       // no default case
     }
   }
   return state;
 };
-
-export default userReducer;

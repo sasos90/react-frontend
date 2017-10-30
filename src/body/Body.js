@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 import './Body.css';
 import Home from "./scenes/Home/Home";
 import Game from "./components/game/Game";
+import { connect } from 'react-redux';
 
 class Body extends Component {
-
-  constructor() {
-    super();
-    // @Todo: Set loggedIn state with REST API. Login functionality
-    this.state = {
-      loggedIn: true
-    };
-  }
-
   render() {
+    if (!this.props.user) {
+      return (<Home />);
+    }
     return (
       <div className="Body">
-        {this.state.loggedIn ? <Game /> : <Home />}
+        {this.props.user.loggedIn ? <Game /> : <Home />}
       </div>
     );
   }
 }
 
-export default Body;
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+export default connect(mapStateToProps)(Body);

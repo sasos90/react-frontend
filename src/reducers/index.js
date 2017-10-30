@@ -1,12 +1,12 @@
 import {combineReducers} from "redux";
-import userReducer from "./userReducer";
-import playersReducer from "./playersReducer";
-import matchesReducer from "./matchesReducer";
+import UserReducer from "./userReducer";
+import PlayersReducer from "./playersReducer";
+import MatchesReducer from "./matchesReducer";
 
 const reducers = combineReducers({
-  user: userReducer,
-  players: playersReducer,
-  matches: matchesReducer
+  user: UserReducer,
+  players: PlayersReducer,
+  matches: MatchesReducer
 });
 
 export default reducers;

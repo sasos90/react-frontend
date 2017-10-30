@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Header.css';
 import logo from './images/logo.svg';
 import Popup from "../components/Popup/Popup";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {login} from "../actions/index"
 
 class Header extends Component {
 
@@ -34,11 +37,18 @@ class Header extends Component {
             <button className="login" onClick={this.openLoginPopup}>LOGIN</button>
           </div>
 
-          {this.state.registerPopupOpened && <Popup onClose={response => this.closeRegisterPopup(response)} className="register-popup">
+          {(this.state.registerPopupOpened && !this.props.user.loggedIn) && <Popup onClose={response => this.closeRegisterPopup(response)} className="register-popup">
             <div>Popup for register</div>
           </Popup>}
-          {this.state.loginPopupOpened && <Popup onClose={response => this.closeLoginPopup(response)} className="login-popup">
-            <div>Popup for login</div>
+          {(this.state.loginPopupOpened && !this.props.user.loggedIn) && <Popup onClose={response => this.closeLoginPopup(response)} className="login-popup">
+            <div>
+              <input type="text" name="username" placeholder="Username" />
+              <input type="password" name="password" placeholder="Password" />
+              <div onClick={() => this.props.login({
+                username: 'saso',
+                password: 'sasoPw'
+              })}>Login</div>
+            </div>
           </Popup>}
         </div>
       </div>
@@ -74,4 +84,16 @@ class Header extends Component {
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    login: login
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Header);
