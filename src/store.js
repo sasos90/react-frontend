@@ -1,4 +1,4 @@
-import {applyMiddleware, createStore} from "redux";
+import {applyMiddleware, createStore, compose} from "redux";
 // auto logger
 import { createLogger } from 'redux-logger';
 // just for using async dispatches
@@ -31,7 +31,8 @@ const initialStore = {
   matches: []
 };
 
-const store = createStore(reducers, initialStore, middleware);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, initialStore, composeEnhancers(middleware));
 
 /* How to subscribe to store */
 /*store.subscribe(() => {
