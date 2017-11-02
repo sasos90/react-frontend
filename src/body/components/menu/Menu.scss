@@ -26,6 +26,10 @@
 
   li {
     text-align: left;
+
+    &.logout-item {
+      cursor: pointer;
+    }
   }
 
   & > ul {
