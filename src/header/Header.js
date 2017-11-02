@@ -30,12 +30,14 @@ class Header extends Component {
           <h2>Welcome to React!</h2>
         </div>
         <div className="account-wrapper">
+          {!this.props.user.loggedIn &&
           <div className="register-action">
             <button className="register" onClick={this.openRegisterPopup}>REGISTER</button>
-          </div>
+          </div>}
+          {!this.props.user.loggedIn &&
           <div className="login-action">
             <button className="login" onClick={this.openLoginPopup}>LOGIN</button>
-          </div>
+          </div>}
 
           {(this.state.registerPopupOpened && !this.props.user.loggedIn) && <Popup onClose={response => this.closeRegisterPopup(response)} className="register-popup">
             <div>Popup for register</div>
