@@ -1,3 +1,5 @@
+import {LOGGED_IN, LOGGED_OUT} from "./types";
+
 export const login = (credentials) => {
   console.log(`Login credentials: ${credentials.username}`);
 
@@ -7,11 +9,21 @@ export const login = (credentials) => {
     username: credentials.username,
     email: email
   }));
+
+  let user = {
+    username: credentials.username,
+    email: email
+  };
+
+  return setLoggedIn(user);
+};
+
+export const setLoggedIn = (user) => {
   return {
-    type: 'LOGGED_IN',
+    type: LOGGED_IN,
     payload: {
-      username: credentials.username,
-      email: email
+      username: user.username,
+      email: user.email
     }
   };
 };
@@ -21,6 +33,6 @@ export const logout = () => {
 
   window.localStorage.removeItem('user');
   return {
-    type: 'LOGGED_OUT'
+    type: LOGGED_OUT
   };
 };
