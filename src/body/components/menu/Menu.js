@@ -46,7 +46,7 @@ class Menu extends Component {
               {item.subItems.map((subItem, b) => (
                 <li key={b}><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>
               ))}
-              <li className='logout-item' onClick={() => this.props.logout()}>Logout</li>
+              <li className='logout-item' onClick={this.props.logout}>Logout</li>
             </ul>}
       </div>;
     })}</div>;

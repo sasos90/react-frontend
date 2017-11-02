@@ -17,9 +17,11 @@ class Header extends Component {
       loginPopupOpened: false
     };
 
-    // bind the context to methods in order to use 'this' in them OR you can use the arrow syntax in the onClick attribute
     this.openRegisterPopup = this.openRegisterPopup.bind(this);
     this.openLoginPopup = this.openLoginPopup.bind(this);
+    this.loginUser = this.loginUser.bind(this);
+    this.closeRegisterPopup = this.closeRegisterPopup.bind(this);
+    this.closeLoginPopup = this.closeLoginPopup.bind(this);
   }
 
   render() {
@@ -39,14 +41,14 @@ class Header extends Component {
             <button className="login" onClick={this.openLoginPopup}>LOGIN</button>
           </div>}
 
-          {this.state.registerPopupOpened && <Popup onClose={this.closeRegisterPopup.bind(this)} className="register-popup">
+          {this.state.registerPopupOpened && <Popup onClose={this.closeRegisterPopup} className="register-popup">
             <div>Popup for register</div>
           </Popup>}
-          {this.state.loginPopupOpened && <Popup onClose={this.closeLoginPopup.bind(this)} className="login-popup">
+          {this.state.loginPopupOpened && <Popup onClose={this.closeLoginPopup} className="login-popup">
             <div>
               <input type="text" name="username" placeholder="Username" />
               <input type="password" name="password" placeholder="Password" />
-              <div onClick={this.loginUser.bind(this)}>Login</div>
+              <div onClick={this.loginUser}>Login</div>
             </div>
           </Popup>}
         </div>
