@@ -15,3 +15,12 @@ export const login = (credentials) => {
     }
   };
 };
+
+export const logout = () => {
+  console.log(`Logout user`);
+
+  window.localStorage.removeItem('user');
+  return {
+    type: 'LOGGED_OUT'
+  };
+};

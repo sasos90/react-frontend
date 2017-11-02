@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './Menu.css';
 import { NavLink } from "react-router-dom";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import {logout} from "../../../actions/index";
 
 class Menu extends Component {
 
@@ -30,9 +33,9 @@ class Menu extends Component {
           {title: 'Forum', link: '/forum'},
           {title: 'Help & Support', link: '/support'}
         ]
-      }, {
+      }/*, {
         headline: {title: 'Logout', link: '/logout', exact: true}
-      }
+      }*/
     ];
 
     return <div>{menu.map((item, a) => {
@@ -43,6 +46,7 @@ class Menu extends Component {
               {item.subItems.map((subItem, b) => (
                 <li key={b}><NavLink to={subItem.link} activeClassName={`active`}>{subItem.title}</NavLink></li>
               ))}
+              <li onClick={() => this.props.logout()}>Logout</li>
             </ul>}
       </div>;
     })}</div>;
@@ -58,4 +62,15 @@ class Menu extends Component {
   }
 }
 
-export default Menu;
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    logout: logout
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(Menu);
