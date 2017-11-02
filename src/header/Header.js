@@ -39,22 +39,27 @@ class Header extends Component {
             <button className="login" onClick={this.openLoginPopup}>LOGIN</button>
           </div>}
 
-          {(this.state.registerPopupOpened && !this.props.user.loggedIn) && <Popup onClose={response => this.closeRegisterPopup(response)} className="register-popup">
+          {this.state.registerPopupOpened && <Popup onClose={this.closeRegisterPopup.bind(this)} className="register-popup">
             <div>Popup for register</div>
           </Popup>}
-          {(this.state.loginPopupOpened && !this.props.user.loggedIn) && <Popup onClose={response => this.closeLoginPopup(response)} className="login-popup">
+          {this.state.loginPopupOpened && <Popup onClose={this.closeLoginPopup.bind(this)} className="login-popup">
             <div>
               <input type="text" name="username" placeholder="Username" />
               <input type="password" name="password" placeholder="Password" />
-              <div onClick={() => this.props.login({
-                username: 'saso',
-                password: 'sasoPw'
-              })}>Login</div>
+              <div onClick={this.loginUser.bind(this)}>Login</div>
             </div>
           </Popup>}
         </div>
       </div>
     );
+  }
+
+  loginUser() {
+    this.closeLoginPopup();
+    this.props.login({
+      username: 'saso',
+      password: 'sasoPw'
+    });
   }
 
   openRegisterPopup() {
@@ -64,8 +69,7 @@ class Header extends Component {
     });
   }
 
-  closeRegisterPopup(data: any) {
-    console.log(data);
+  closeRegisterPopup() {
     this.setState({
       registerPopupOpened: false
     });
@@ -78,8 +82,7 @@ class Header extends Component {
     });
   }
 
-  closeLoginPopup(data) {
-    console.log(data);
+  closeLoginPopup() {
     this.setState({
       loginPopupOpened: false
     });
