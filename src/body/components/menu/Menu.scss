@@ -7,6 +7,10 @@
     text-align: left;
     width: 100%;
     margin-top: 5px;
+
+    .logout-item {
+      cursor: pointer;
+    }
   }
 
   a {
@@ -26,10 +30,6 @@
 
   li {
     text-align: left;
-
-    &.logout-item {
-      cursor: pointer;
-    }
   }
 
   & > ul {
