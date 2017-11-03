@@ -5,6 +5,7 @@ import Popup from "../components/Popup/Popup";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {login} from "../actions/index"
+import Login from "./components/login/Login";
 
 class Header extends Component {
 
@@ -46,9 +47,7 @@ class Header extends Component {
           </Popup>}
           {this.state.loginPopupOpened && <Popup onClose={this.closeLoginPopup} className="login-popup">
             <div>
-              <input type="text" name="username" placeholder="Username" />
-              <input type="password" name="password" placeholder="Password" />
-              <div onClick={this.loginUser}>Login</div>
+              <Login loginSubmitted={this.closeLoginPopup} />
             </div>
           </Popup>}
         </div>
