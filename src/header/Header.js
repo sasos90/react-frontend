@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {login} from "../actions/index"
 import Login from "./components/login/Login";
+import {withRouter} from "react-router-dom";
 
 class Header extends Component {
 
@@ -102,4 +103,4 @@ function matchDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, matchDispatchToProps)(Header));

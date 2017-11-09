@@ -3,6 +3,7 @@ import './Body.css';
 import Home from "./scenes/Home/Home";
 import Game from "./components/game/Game";
 import { connect } from 'react-redux';
+import {withRouter} from "react-router-dom";
 
 class Body extends Component {
   render() {
@@ -23,4 +24,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Body);
+export default withRouter(connect(mapStateToProps)(Body));

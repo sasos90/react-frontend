@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Menu.css';
-import { NavLink } from "react-router-dom";
+import {NavLink, withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {logout} from "../../../actions/index";
@@ -76,4 +76,4 @@ function matchDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, matchDispatchToProps)(Menu);
+export default withRouter(connect(mapStateToProps, matchDispatchToProps)(Menu));
