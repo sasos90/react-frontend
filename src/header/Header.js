@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './Header.css';
 import logo from './images/logo.svg';
-import Popup from "../components/Popup/Popup";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {login} from "../actions/index"
 import Login from "./components/login/Login";
 import {withRouter} from "react-router-dom";
+import Modal from "../shared/Modal/Modal";
 
 class Header extends Component {
 
@@ -43,14 +43,14 @@ class Header extends Component {
             <button className="login" onClick={this.openLoginPopup}>LOGIN</button>
           </div>}
 
-          {this.state.registerPopupOpened && <Popup onClose={this.closeRegisterPopup} className="register-popup">
+          {this.state.registerPopupOpened && <Modal onClose={this.closeRegisterPopup} className="register-popup">
             <div>Popup for register</div>
-          </Popup>}
-          {this.state.loginPopupOpened && <Popup onClose={this.closeLoginPopup} className="login-popup">
+          </Modal>}
+          {this.state.loginPopupOpened && <Modal onClose={this.closeLoginPopup} className="login-popup">
             <div>
               <Login loginSubmitted={this.closeLoginPopup} />
             </div>
-          </Popup>}
+          </Modal>}
         </div>
       </div>
     );
