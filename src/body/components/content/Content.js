@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Content.css';
-import {Route} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import TournamentOverview from "../../scenes/Tournaments/scenes/Overview/TournamentOverview";
 import TournamentDetail from "../../scenes/Tournaments/scenes/Detail/TournamentDetail";
 import TournamentSignIn from "../../scenes/Tournaments/scenes/SignIn/TournamentSignIn";
@@ -18,26 +18,30 @@ class Content extends Component {
   render() {
     return (
       <div className="Content">
-        <Route exact={true} path="/" render={() => (
-          <Overview />
-        )} />
+        <Switch>
+          <Route exact={true} path="/" render={() => (
+            <Overview />
+          )} />
 
-        {/* Team */}
-        <Route path="/players" component={TeamPlayers} />
-        <Route path="/tactics" component={TeamTactics} />
-        <Route path="/training" component={TeamTraining} />
-        <Route path="/hireplayers" component={TeamHirePlayers} />
+          {/* Team */}
+          <Route path="/players" component={TeamPlayers} />
+          <Route path="/tactics" component={TeamTactics} />
+          <Route path="/training" component={TeamTraining} />
+          <Route path="/hireplayers" component={TeamHirePlayers} />
 
-        {/* Matches */}
-        <Route path="/tournaments" component={TournamentOverview} />
-        <Route path="/tournament/:tournamentId" component={TournamentDetail} />
-        <Route path="/signtournament" component={TournamentSignIn} />
+          {/* Matches */}
+          <Route path="/tournaments" component={TournamentOverview} />
+          <Route path="/signtournament" component={TournamentSignIn} />
 
-        {/* User */}
-        <Route path="/settings" component={UserSettings} />
-        <Route path="/finduser" component={UserFindUser} />
-        <Route path="/forum" component={UserForum} />
-        <Route path="/support" component={UserSupport} />
+          {/* User */}
+          <Route path="/settings" component={UserSettings} />
+          <Route path="/finduser" component={UserFindUser} />
+          <Route path="/forum" component={UserForum} />
+          <Route path="/support" component={UserSupport} />
+          <Route render={() => (
+            <div>404 NO MATCH</div>
+          )} />
+        </Switch>
       </div>
     );
   }
