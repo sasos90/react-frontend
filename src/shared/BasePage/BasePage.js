@@ -5,7 +5,7 @@ class BasePage extends Component {
 
   render() {
     return (
-      <div className="base-page-container">
+      <div className="BasePage">
         <h2>{this.props.title}</h2>
         <div className='sub-page-wrapper'>{this.props.subPage}</div>
       </div>
