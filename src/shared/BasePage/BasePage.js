@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './BasePage.css';
 
 class BasePage extends Component {
@@ -12,5 +13,10 @@ class BasePage extends Component {
     );
   }
 }
+
+BasePage.propTypes = {
+  title: PropTypes.string.isRequired,
+  subPage: PropTypes.element.isRequired
+};
 
 export default BasePage;
