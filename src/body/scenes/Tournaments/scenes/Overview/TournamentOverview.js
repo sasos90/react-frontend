@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TournamentOverview.css';
-import {Link, Route} from "react-router-dom";
+import {Link, Route, withRouter} from "react-router-dom";
 import TournamentDetail from "../Detail/TournamentDetail";
 
 class TournamentOverview extends Component {
@@ -19,4 +19,4 @@ class TournamentOverview extends Component {
   }
 }
 
-export default TournamentOverview;
+export default withRouter(TournamentOverview);
