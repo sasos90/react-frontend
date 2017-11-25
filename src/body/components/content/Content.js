@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Content.css';
 import {Route, Switch} from "react-router-dom";
 import TournamentOverview from "../../scenes/Tournaments/scenes/Overview/TournamentOverview";
-import TournamentDetail from "../../scenes/Tournaments/scenes/Detail/TournamentDetail";
 import TournamentSignIn from "../../scenes/Tournaments/scenes/SignIn/TournamentSignIn";
 import Overview from "../../scenes/Overview/Overview";
 import TeamPlayers from "../../scenes/Team/scenes/Players/TeamPlayers";
