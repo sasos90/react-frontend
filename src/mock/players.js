@@ -1,3 +1,39 @@
+const players = [];
+
+const playerNames = [
+  'Chris Johnson',
+  'Michael Oliver',
+  'Dwayne Patrick',
+  'John Miller'
+];
+const numberOfPlayers = 4;
+
+let rand = (min, max) => {
+  return Math.floor(min + Math.random() * (max + 1 - min));
+};
+
+for (let i = 0; i < numberOfPlayers; i++) {
+  players.push({
+    id: i + 1,
+    name: playerNames[i%4],
+    age: rand(17, 40),
+    height: rand(168, 215),
+    weight: rand(65, 130),
+    shirtNumber: rand(1, 100),
+    picture: '/github.jpg',
+    skills: {
+      speed: rand(1, 20),
+      technique: rand(1, 20),
+      jump: rand(1, 20),
+      experience: rand(1, 20),
+      fatigue: rand(1, 20)
+    }
+  });
+}
+
+
+export default players;
+/*
 export const players = [
   {
     id: 123,
@@ -61,3 +97,4 @@ export const players = [
     }
   }
 ];
+*/

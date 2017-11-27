@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TeamPlayers.css';
-import {players} from "../../../../../mock/players";
+import players from "../../../../../mock/players";
 import Player from "../../../../components/player/Player";
 
 class TeamPlayers extends Component {
