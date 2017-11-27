@@ -1,2 +1,21 @@
+@import '../../../shared/variables.scss';
+
 .Player {
+  width: 100%;
+
+  .name {
+    color: $colorGreen;
+  }
+
+  .age {
+
+  }
+
+  .height {
+    width: 50%;
+  }
+
+  .weight {
+    width: 50%;
+  }
 }

@@ -8,7 +8,9 @@ class TeamPlayers extends Component {
   render() {
     return (
       <div className="TeamPlayers">
-        {this.getTeamPlayers()}
+        <div className="players-list">
+          {this.getTeamPlayers()}
+        </div>
       </div>
     );
   }
