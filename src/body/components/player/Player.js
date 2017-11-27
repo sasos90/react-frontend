@@ -13,6 +13,13 @@ class Player extends Component {
           <div className="name">{this.props.player.name}</div>
           <div className="age">{this.props.player.age} years</div>
           <div className="height-weight">{`${this.props.player.height} cm, ${this.props.player.weight} kg`}</div>
+          <div className="skills-wrapper">
+            <div className="speed">Speed: {this.props.player.skills.speed}</div>
+            <div className="technique">Technique: {this.props.player.skills.technique}</div>
+            <div className="jump">Jump: {this.props.player.skills.jump}</div>
+            <div className="experience">Experience: {this.props.player.skills.experience}</div>
+            <div className="fatigue">Fatigue: {this.props.player.skills.fatigue}</div>
+          </div>
         </div>
       </div>
     );
