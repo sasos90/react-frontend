@@ -6,6 +6,7 @@ export const players = [
     height: 183,
     weight: 90,
     shirtNumber: 10,
+    picture: '/github.jpg',
     skills: {
       speed: 1,
       technique: 1,
@@ -20,6 +21,7 @@ export const players = [
     height: 193,
     weight: 95,
     shirtNumber: 11,
+    picture: '/github.jpg',
     skills: {
       speed: 2,
       technique: 2,
@@ -34,6 +36,7 @@ export const players = [
     height: 205,
     weight: 120,
     shirtNumber: 12,
+    picture: '/github.jpg',
     skills: {
       speed: 3,
       technique: 3,
@@ -48,6 +51,7 @@ export const players = [
     height: 175,
     weight: 78,
     shirtNumber: 13,
+    picture: '/github.jpg',
     skills: {
       speed: 4,
       technique: 4,

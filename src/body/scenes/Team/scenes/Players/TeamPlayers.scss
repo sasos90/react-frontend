@@ -1,10 +1,9 @@
 .TeamPlayers {
 
   .players-list {
-    display: flex;
-
     .Player {
-
+      width: 50%;
+      float: left;
     }
   }
 }

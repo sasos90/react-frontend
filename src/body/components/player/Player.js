@@ -6,10 +6,14 @@ class Player extends Component {
   render() {
     return (
       <div className="Player">
-        <div className="name">{this.props.player.name}</div>
-        <div className="age">{this.props.player.age} years</div>
-        <div className="height">{this.props.player.height} cm</div>
-        <div className="weight">{this.props.player.weight} kg</div>
+        <div className="image-wrapper">
+          <img src={this.props.player.picture} alt=""/>
+        </div>
+        <div className="data-wrapper">
+          <div className="name">{this.props.player.name}</div>
+          <div className="age">{this.props.player.age} years</div>
+          <div className="height-weight">{`${this.props.player.height} cm, ${this.props.player.weight} kg`}</div>
+        </div>
       </div>
     );
   }
