@@ -20,7 +20,7 @@ for (let i = 0; i < numberOfPlayers; i++) {
     height: rand(168, 215),
     weight: rand(65, 130),
     shirtNumber: rand(1, 100),
-    picture: '/github.jpg',
+    picture: '/unknown.png',
     skills: {
       speed: rand(1, 20),
       technique: rand(1, 20),
