@@ -13,6 +13,7 @@ import UserFindUser from "../../scenes/User/scenes/FindUser/UserFindUser";
 import UserForum from "../../scenes/User/scenes/Forum/UserForum";
 import UserSupport from "../../scenes/User/scenes/Support/UserSupport";
 import BasePage from "../../../shared/BasePage/BasePage";
+import TournamentDetail from "../../scenes/Tournaments/scenes/Detail/TournamentDetail";
 
 class Content extends Component {
   render() {
@@ -38,6 +39,9 @@ class Content extends Component {
           )} />
 
           {/* Matches */}
+          <Route path="/tournaments/:tournamentId" render={() => (
+            <BasePage title='Tournament detail' subPage={<TournamentDetail />}/>
+          )} />
           <Route path="/tournaments" render={() => (
             <BasePage title='Tournaments' subPage={<TournamentOverview />}/>
           )} />
