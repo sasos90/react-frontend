@@ -9,6 +9,14 @@ class TeamPlayers extends Component {
     return (
       <div className="TeamPlayers">
         <div className="players-list">
+          <div className="Player add-new-player">
+            <div className="image-wrapper">
+              <img src={'unknown.png'} alt=""/>
+            </div>
+            <div className="data-wrapper">
+              <div>Add new player</div>
+            </div>
+          </div>
           {this.getTeamPlayers()}
         </div>
       </div>

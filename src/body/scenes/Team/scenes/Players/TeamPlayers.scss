@@ -5,6 +5,17 @@
       width: 50%;
       float: left;
       margin-bottom: 10px;
+
+      &.add-new-player {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+
+        .data-wrapper {
+          font-size: 20px;
+        }
+      }
     }
   }
 }
