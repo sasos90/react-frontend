@@ -10,7 +10,13 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
+// TODO: Needs a real login with backend in order to get TOKEN, Username etc.
+Cypress.Commands.add("login", (email, password) => {
+  window.localStorage.setItem("user", JSON.stringify({
+    username: 'tester',
+    email: email
+  }));
+});
 //
 //
 // -- This is a child command --

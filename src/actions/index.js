@@ -5,6 +5,7 @@ export const login = (credentials) => {
 
   const email = 'test@email.com'; // Todo: Email is provided by API on successfull login.
 
+  // TODO: Make a general interface about user somewhere.
   window.localStorage.setItem('user', JSON.stringify({
     username: credentials.username,
     email: email
