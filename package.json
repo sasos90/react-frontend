@@ -26,6 +26,7 @@
     "deploy": "npm run build && firebase deploy",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run flow && npm run build-css && react-scripts build",
-    "test": "react-scripts test --env=jsdom"
+    "test": "react-scripts test --env=jsdom",
+    "cypress:open": "cypress open"
   }
 }
