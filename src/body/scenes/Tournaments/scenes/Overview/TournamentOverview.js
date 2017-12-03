@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './TournamentOverview.css';
-import {Link, Route, withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 class TournamentOverview extends Component {
 
   currentUrl = '';
