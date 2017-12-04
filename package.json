@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cypress": "^1.1.3",
     "firebase": "^4.6.2",
     "flow-bin": "^0.59.0",
     "node-sass-chokidar": "0.0.3",
