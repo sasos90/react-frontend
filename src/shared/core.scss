@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,800&subset=latin-ext');
+
 * {
   box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.2;
 }
