@@ -8,6 +8,7 @@ class BasePage extends Component {
     return (
       <div className="BasePage">
         <h2>{this.props.title}</h2>
+        <div className="description">{this.props.description}</div>
         <div className='sub-page-wrapper'>{this.props.subPage}</div>
       </div>
     );
@@ -16,7 +17,8 @@ class BasePage extends Component {
 
 BasePage.propTypes = {
   title: PropTypes.string.isRequired,
-  subPage: PropTypes.element.isRequired
+  subPage: PropTypes.element.isRequired,
+  description: PropTypes.string
 };
 
 export default BasePage;

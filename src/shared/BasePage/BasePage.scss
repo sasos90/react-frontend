@@ -1,9 +1,15 @@
+@import '../variables.scss';
+
 .BasePage {
   padding: 20px;
+  text-align: left;
 
   h2 {
-    text-align: left;
-    padding-left: 30px;
+  }
+
+  .description {
+    color: $colorGreyLight;
+    margin-bottom: 20px;
   }
 
   .sub-page-wrapper {

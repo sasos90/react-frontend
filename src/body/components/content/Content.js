@@ -17,6 +17,12 @@ import TournamentDetail from "../../scenes/Tournaments/scenes/Detail/TournamentD
 
 class Content extends Component {
   render() {
+    const description = {
+      TRAINING: 'Do not forget to train your guys but do not wear them out completely! Next weekly training schedule starts in 3 days 45 minutes.',
+      FIND_PLAYERS: 'Once per week, you can ask some acquaintances, whether they know for some good players in the hood.',
+      TOURNAMENTS: 'Check your active and past tournaments!',
+      TOURNAMENT_DETAIL: 'Active tournament!'
+    };
     return (
       <div className="Content">
         <Switch>
@@ -32,18 +38,18 @@ class Content extends Component {
             <BasePage title='Tactics' subPage={<TeamTactics />}/>
           )} />
           <Route path="/training" render={() => (
-            <BasePage title='Training' subPage={<TeamTraining />}/>
+            <BasePage title='Training' subPage={<TeamTraining />} description={description.TRAINING} />
           )} />
           <Route path="/hireplayers" render={() => (
-            <BasePage title='Hire players' subPage={<TeamHirePlayers />}/>
+            <BasePage title='Hire players' subPage={<TeamHirePlayers />} description={description.FIND_PLAYERS} />
           )} />
 
           {/* Matches */}
           <Route path="/tournaments/:tournamentId" render={() => (
-            <BasePage title='Tournament detail' subPage={<TournamentDetail />}/>
+            <BasePage title='Tournament detail' subPage={<TournamentDetail />} description={description.TOURNAMENT_DETAIL} />
           )} />
           <Route path="/tournaments" render={() => (
-            <BasePage title='Tournaments' subPage={<TournamentOverview />}/>
+            <BasePage title='Tournaments' subPage={<TournamentOverview />} description={description.TOURNAMENTS} />
           )} />
           <Route path="/signtournament" render={() => (
             <BasePage title='Sign for a tournament' subPage={<TournamentSignIn />}/>
