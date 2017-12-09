@@ -25,11 +25,9 @@ class Dropdown extends Component {
         <h3>{this.props.title}</h3>
         <div className="wrapper">
           <select value={this.state.value} onChange={this.valueChanged}>
-            <option value="-1">Rest</option>
-            <option value="0">Jumping</option>
-            <option value="1">Speed</option>
-            <option value="2">Shooting</option>
-            <option value="3">Technique</option>
+            {this.props.options.map(o => (
+              <option key={o.value} value={o.value}>{o.label}</option>
+            ))}
           </select>
         </div>
       </div>
@@ -44,7 +42,12 @@ class Dropdown extends Component {
 
 Dropdown.propTypes = {
   title: PropTypes.string,
-  value: PropTypes.number
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  options: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    label: PropTypes.string,
+    selected: PropTypes.boolean
+  })).isRequired
 };
 
 export default Dropdown;
