@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 @mixin font($font-family, $font-file, $font-weight, $font-style) {
   @font-face {
     font-family: $font-family;
@@ -19,8 +21,12 @@
 }
 
 html, body {
-  font-family: 'Nunito', sans-serif;
+  font-family: $font;
   line-height: 1.2;
+}
+
+select {
+  font-family: $font;
 }
 
 .clearfix {
