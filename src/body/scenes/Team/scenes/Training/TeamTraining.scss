@@ -1,2 +1,12 @@
+@import '../../../../../shared/helpers.scss';
+
 .TeamTraining {
+  .day-part-wrapper {
+    @include clearfix();
+
+    .part {
+      width: 50%;
+      float: left;
+    }
+  }
 }
