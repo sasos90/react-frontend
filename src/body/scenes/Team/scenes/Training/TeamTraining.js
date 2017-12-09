@@ -23,6 +23,12 @@ class TeamTraining extends Component {
       label: 'Technique'
     }
   ];
+
+  constructor() {
+    super();
+    this.trainSubmit = this.trainSubmit.bind(this);
+  }
+
   render() {
     return (
       <div className="TeamTraining">
@@ -34,8 +40,13 @@ class TeamTraining extends Component {
             <Dropdown title={'Evening'} value={2} options={this.trainingOptions} />
           </div>
         </div>
+        <button className="train" onClick={this.trainSubmit}>Train</button>
       </div>
     );
+  }
+
+  trainSubmit() {
+    // TODO: Save training options!
   }
 }
 
