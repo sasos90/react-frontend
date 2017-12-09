@@ -22,3 +22,11 @@ html, body {
   font-family: 'Nunito', sans-serif;
   line-height: 1.2;
 }
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

@@ -2,7 +2,7 @@
 
 .TeamTraining {
   .day-part-wrapper {
-    @include clearfix();
+    @extend .clearfix;
 
     .part {
       width: 50%;
