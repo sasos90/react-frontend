@@ -37,16 +37,19 @@ class Dropdown extends Component {
   valueChanged(event) {
     const value = event.target.value;
     this.setState({value: value});
+    if (this.props.valueChanged) {
+      this.props.valueChanged(value);
+    }
   }
 }
 
 Dropdown.propTypes = {
   title: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  valueChanged: PropTypes.func,
   options: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    label: PropTypes.string,
-    selected: PropTypes.boolean
+    label: PropTypes.string
   })).isRequired
 };
 

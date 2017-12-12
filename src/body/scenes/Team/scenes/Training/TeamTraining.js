@@ -7,26 +7,32 @@ class TeamTraining extends Component {
 
   trainingOptions = [
     {
-      value: '-1',
+      value: -1,
       label: 'Rest'
     }, {
-      value: '0',
+      value: 0,
       label: 'Jumping'
     }, {
-      value: '1',
+      value: 1,
       label: 'Speed'
     }, {
-      value: '2',
+      value: 2,
       label: 'Shooting'
     }, {
-      value: '3',
+      value: 3,
       label: 'Technique'
     }
   ];
 
+  // TODO: Get values from backend.
+  morningTraining = 1;
+  eveningTraining = 3;
+
   constructor() {
     super();
     this.trainSubmit = this.trainSubmit.bind(this);
+    this.onMorningTrainingChange = this.onMorningTrainingChange.bind(this);
+    this.onEveningTrainingChange = this.onEveningTrainingChange.bind(this);
   }
 
   render() {
@@ -34,10 +40,10 @@ class TeamTraining extends Component {
       <div className="TeamTraining">
         <div className="day-part-wrapper">
           <div className="part morning">
-            <Dropdown title={'Morning'} value={1} options={this.trainingOptions} />
+            <Dropdown title={'Morning'} value={this.morningTraining} options={this.trainingOptions} valueChanged={this.onMorningTrainingChange} />
           </div>
           <div className="part evening">
-            <Dropdown title={'Evening'} value={2} options={this.trainingOptions} />
+            <Dropdown title={'Evening'} value={this.eveningTraining} options={this.trainingOptions} valueChanged={this.onEveningTrainingChange} />
           </div>
         </div>
         <button className="train" onClick={this.trainSubmit}>Train</button>
@@ -47,6 +53,16 @@ class TeamTraining extends Component {
 
   trainSubmit() {
     // TODO: Save training options!
+    console.log('Morning training:', this.morningTraining);
+    console.log('Evening training:', this.eveningTraining);
+  }
+
+  onMorningTrainingChange(value) {
+    this.morningTraining = Number(value);
+  }
+
+  onEveningTrainingChange(value) {
+    this.eveningTraining = Number(value);
   }
 }
 
