@@ -21,6 +21,7 @@ import reducers from "./reducers/index";
 };*/
 const middleware = applyMiddleware(promise(), thunk, createLogger());
 
+// We can use some persisted data and provide it in initial store (like persisted user dispatch from App.js).
 const initialStore = {
   user: {
     loggedIn: false,
