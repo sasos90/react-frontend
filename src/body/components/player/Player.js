@@ -37,6 +37,7 @@ Player.propTypes = {
     age: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     weight: PropTypes.number.isRequired,
+    picture: PropTypes.string.isRequired,
     skills: PropTypes.shape({
       speed: PropTypes.number.isRequired,
       technique: PropTypes.number.isRequired,
