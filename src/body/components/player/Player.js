@@ -36,7 +36,14 @@ Player.propTypes = {
     name: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
-    weight: PropTypes.number.isRequired
+    weight: PropTypes.number.isRequired,
+    skills: PropTypes.shape({
+      speed: PropTypes.number.isRequired,
+      technique: PropTypes.number.isRequired,
+      jump: PropTypes.number.isRequired,
+      experience: PropTypes.number.isRequired,
+      fatigue: PropTypes.number.isRequired
+    }).isRequired
   }).isRequired
 };
 
