@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import './Player.css';
 
 class Player extends Component {
+
   render() {
     return (
-      <div className="Player">
+      <div className="Player" onClick={this.toPlayerDetail.bind(this, this.props.player)}>
         <div className="image-wrapper">
           <img src={this.props.player.picture} alt=""/>
         </div>
@@ -23,6 +24,10 @@ class Player extends Component {
         </div>
       </div>
     );
+  }
+
+  toPlayerDetail(player) {
+    console.table(player);
   }
 }
 
