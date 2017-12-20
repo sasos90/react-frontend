@@ -14,6 +14,7 @@ import UserForum from "../../scenes/User/scenes/Forum/UserForum";
 import UserSupport from "../../scenes/User/scenes/Support/UserSupport";
 import BasePage from "../../../shared/BasePage/BasePage";
 import TournamentDetail from "../../scenes/Tournaments/scenes/Detail/TournamentDetail";
+import PlayerDetail from "../../scenes/Team/scenes/PlayerDetail/PlayerDetail";
 
 class Content extends Component {
   render() {
@@ -31,6 +32,9 @@ class Content extends Component {
           )} />
 
           {/* Team */}
+          <Route path="/players/:playerId" render={() => (
+            <BasePage title='Player detail' subPage={<PlayerDetail />}/>
+          )} />
           <Route path="/players" render={() => (
             <BasePage title='Players' subPage={<TeamPlayers />}/>
           )} />
